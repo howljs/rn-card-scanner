@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <color name="wocr_card_shadow_color">#A6262626</color>
+
+</resources>

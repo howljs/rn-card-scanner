@@ -1,0 +1,2 @@
+OPENCV_3RDPARTY_COMPONENTS:=tbb cpufeatures
+OPENCV_EXTRA_COMPONENTS:=z dl m log
