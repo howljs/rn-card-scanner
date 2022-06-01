@@ -7,11 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D653FDE628435212008D6D98 /* CardScannerViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D653FDE528435212008D6D98 /* CardScannerViewManager.m */; };
-		D653FDF0284355BE008D6D98 /* CardScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D653FDEF284355BE008D6D98 /* CardScannerView.swift */; };
-		D6D76838284688E300BDE508 /* CardScannerModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D76837284688E300BDE508 /* CardScannerModule.swift */; };
-		D6D7683A28468B2E00BDE508 /* CardScannerModule.m in Sources */ = {isa = PBXBuildFile; fileRef = D6D7683928468B2E00BDE508 /* CardScannerModule.m */; };
-		D6F9145628438A8200752777 /* PayCardsRecognizer.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6F9145528438A8200752777 /* PayCardsRecognizer.xcframework */; };
+		D6D7683E2847AEDB00BDE508 /* CardScannerViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D6D7683D2847AEDB00BDE508 /* CardScannerViewManager.m */; };
+		D6D768422847AF1C00BDE508 /* CardScannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6D768412847AF1C00BDE508 /* CardScannerView.m */; };
+		D6D768452847B22500BDE508 /* PayCardsRecognizer.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6D768442847B22500BDE508 /* PayCardsRecognizer.xcframework */; };
+		D6D768482847B34D00BDE508 /* CardScannerModule.m in Sources */ = {isa = PBXBuildFile; fileRef = D6D768472847B34D00BDE508 /* CardScannerModule.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,12 +27,13 @@
 
 /* Begin PBXFileReference section */
 		134814201AA4EA6300B7C361 /* libCardScanner.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCardScanner.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		D653FDE528435212008D6D98 /* CardScannerViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardScannerViewManager.m; path = CardScanner/CardScannerViewManager.m; sourceTree = "<group>"; };
-		D653FDEE284355BD008D6D98 /* CardScanner/CardScanner-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CardScanner/CardScanner-Bridging-Header.h"; sourceTree = "<group>"; };
-		D653FDEF284355BE008D6D98 /* CardScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CardScannerView.swift; path = CardScanner/CardScannerView.swift; sourceTree = "<group>"; };
-		D6D76837284688E300BDE508 /* CardScannerModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CardScannerModule.swift; path = CardScanner/CardScannerModule.swift; sourceTree = "<group>"; };
-		D6D7683928468B2E00BDE508 /* CardScannerModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CardScannerModule.m; path = CardScanner/CardScannerModule.m; sourceTree = "<group>"; };
-		D6F9145528438A8200752777 /* PayCardsRecognizer.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = PayCardsRecognizer.xcframework; path = CardScanner/PayCardsRecognizer.xcframework; sourceTree = "<group>"; };
+		D6D7683D2847AEDB00BDE508 /* CardScannerViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardScannerViewManager.m; path = CardScanner/CardScannerViewManager.m; sourceTree = "<group>"; };
+		D6D7683F2847AEEF00BDE508 /* CardScannerViewManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CardScannerViewManager.h; path = CardScanner/CardScannerViewManager.h; sourceTree = "<group>"; };
+		D6D768402847AEFE00BDE508 /* CardScannerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CardScannerView.h; path = CardScanner/CardScannerView.h; sourceTree = "<group>"; };
+		D6D768412847AF1C00BDE508 /* CardScannerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CardScannerView.m; path = CardScanner/CardScannerView.m; sourceTree = "<group>"; };
+		D6D768442847B22500BDE508 /* PayCardsRecognizer.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = PayCardsRecognizer.xcframework; path = CardScanner/PayCardsRecognizer.xcframework; sourceTree = "<group>"; };
+		D6D768462847B33800BDE508 /* CardScannerModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CardScannerModule.h; path = CardScanner/CardScannerModule.h; sourceTree = "<group>"; };
+		D6D768472847B34D00BDE508 /* CardScannerModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CardScannerModule.m; path = CardScanner/CardScannerModule.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,7 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D6F9145628438A8200752777 /* PayCardsRecognizer.xcframework in Frameworks */,
+				D6D768452847B22500BDE508 /* PayCardsRecognizer.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,28 +59,29 @@
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
-				D653FDE8284352BF008D6D98 /* CardScanner */,
+				D6D7683C2847AEC600BDE508 /* CardScanner */,
 				134814211AA4EA7D00B7C361 /* Products */,
-				D6F9145428438A8200752777 /* Frameworks */,
+				D6D768432847B22500BDE508 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		D653FDE8284352BF008D6D98 /* CardScanner */ = {
+		D6D7683C2847AEC600BDE508 /* CardScanner */ = {
 			isa = PBXGroup;
 			children = (
-				D653FDE528435212008D6D98 /* CardScannerViewManager.m */,
-				D653FDEF284355BE008D6D98 /* CardScannerView.swift */,
-				D653FDEE284355BD008D6D98 /* CardScanner/CardScanner-Bridging-Header.h */,
-				D6D76837284688E300BDE508 /* CardScannerModule.swift */,
-				D6D7683928468B2E00BDE508 /* CardScannerModule.m */,
+				D6D7683D2847AEDB00BDE508 /* CardScannerViewManager.m */,
+				D6D7683F2847AEEF00BDE508 /* CardScannerViewManager.h */,
+				D6D768402847AEFE00BDE508 /* CardScannerView.h */,
+				D6D768412847AF1C00BDE508 /* CardScannerView.m */,
+				D6D768462847B33800BDE508 /* CardScannerModule.h */,
+				D6D768472847B34D00BDE508 /* CardScannerModule.m */,
 			);
 			name = CardScanner;
 			sourceTree = "<group>";
 		};
-		D6F9145428438A8200752777 /* Frameworks */ = {
+		D6D768432847B22500BDE508 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D6F9145528438A8200752777 /* PayCardsRecognizer.xcframework */,
+				D6D768442847B22500BDE508 /* PayCardsRecognizer.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -116,7 +117,6 @@
 				TargetAttributes = {
 					58B511DA1A9E6C8500147676 = {
 						CreatedOnToolsVersion = 6.1.1;
-						LastSwiftMigration = 1330;
 					};
 				};
 			};
@@ -143,10 +143,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D6D7683A28468B2E00BDE508 /* CardScannerModule.m in Sources */,
-				D653FDE628435212008D6D98 /* CardScannerViewManager.m in Sources */,
-				D6D76838284688E300BDE508 /* CardScannerModule.swift in Sources */,
-				D653FDF0284355BE008D6D98 /* CardScannerView.swift in Sources */,
+				D6D768482847B34D00BDE508 /* CardScannerModule.m in Sources */,
+				D6D7683E2847AEDB00BDE508 /* CardScannerViewManager.m in Sources */,
+				D6D768422847AF1C00BDE508 /* CardScannerView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,14 +164,12 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -181,7 +178,6 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -218,14 +214,12 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -233,8 +227,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -255,65 +248,32 @@
 		58B511F01A9E6C8500147676 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_TESTABILITY = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(PROJECT_DIR)",
-					"$(inherited)",
-					"$(PROJECT_DIR)/CardScanner",
-				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"$(SRCROOT)/../node_modules/react-native/React/**",
-					"$(SRCROOT)/../../react-native/React/**",
 					"$(SRCROOT)/../../../React/**",
+					"$(SRCROOT)/../../react-native/React/**",
 				);
-				LIBRARY_SEARCH_PATHS = (
-					"$(PROJECT_DIR)/CardScanner",
-					"$(inherited)",
-					"$(PROJECT_DIR)/CardScanner",
-				);
-				ONLY_ACTIVE_ARCH = YES;
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = CardScanner;
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "CardScanner-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
 		};
 		58B511F11A9E6C8500147676 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_TESTABILITY = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(PROJECT_DIR)",
-					"$(inherited)",
-					"$(PROJECT_DIR)/CardScanner",
-				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"$(SRCROOT)/../node_modules/react-native/React/**",
-					"$(SRCROOT)/../../react-native/React/**",
 					"$(SRCROOT)/../../../React/**",
+					"$(SRCROOT)/../../react-native/React/**",
 				);
-				LIBRARY_SEARCH_PATHS = (
-					"$(PROJECT_DIR)/CardScanner",
-					"$(inherited)",
-					"$(PROJECT_DIR)/CardScanner",
-				);
-				ONLY_ACTIVE_ARCH = NO;
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = CardScanner;
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "CardScanner-Bridging-Header.h";
-				SWIFT_VERSION = 5.0;
-				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Release;
 		};

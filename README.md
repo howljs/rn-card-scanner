@@ -1,6 +1,9 @@
 # Credit Card Scanner
+![npm](https://img.shields.io/npm/dm/rn-card-scanner?logo=npm)
 
 This library provides payment card scanning functionality for your react-native app
+
+![example.gif](example.gif)
 
 - [Installation](#installation)
 - [Usage](#usage)
