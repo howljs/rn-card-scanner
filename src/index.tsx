@@ -78,6 +78,8 @@ const CardScanner: React.ForwardRefRenderFunction<
 
       const toggleFlashId = getCommandId(Commands.toggleFlash);
       const resetResultId = getCommandId(Commands.resetResult);
+      const startCameraId = getCommandId(Commands.startCamera);
+      const stopCameraId = getCommandId(Commands.stopCamera);
 
       return {
         toggleFlash() {
@@ -85,6 +87,12 @@ const CardScanner: React.ForwardRefRenderFunction<
         },
         resetResult() {
           UIManager.dispatchViewManagerCommand(viewId, resetResultId, []);
+        },
+        startCamera() {
+          UIManager.dispatchViewManagerCommand(viewId, startCameraId, []);
+        },
+        stopCamera() {
+          UIManager.dispatchViewManagerCommand(viewId, stopCameraId, []);
         },
       };
     },

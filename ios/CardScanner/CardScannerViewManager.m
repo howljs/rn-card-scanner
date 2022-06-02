@@ -36,6 +36,22 @@ RCT_EXPORT_METHOD(resetResult: (nonnull NSNumber *)viewTag)
     }];
 }
 
+RCT_EXPORT_METHOD(startCamera: (nonnull NSNumber *)viewTag)
+{
+    [self.bridge.uiManager addUIBlock:^(__unused RCTUIManager *uiManager, NSDictionary<NSNumber *, CardScannerView *> *viewRegistry) {
+        CardScannerView *view = viewRegistry[viewTag];
+        [view startCamera];
+    }];
+}
+
+RCT_EXPORT_METHOD(stopCamera: (nonnull NSNumber *)viewTag)
+{
+    [self.bridge.uiManager addUIBlock:^(__unused RCTUIManager *uiManager, NSDictionary<NSNumber *, CardScannerView *> *viewRegistry) {
+        CardScannerView *view = viewRegistry[viewTag];
+        [view stopCamera];
+    }];
+}
+
 RCT_EXPORT_VIEW_PROPERTY(frameColor, UIColor);
 
 RCT_EXPORT_VIEW_PROPERTY(onDidScanCard, RCTBubblingEventBlock)

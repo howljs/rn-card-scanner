@@ -54,6 +54,23 @@
     [_recognizer resetResult];
 }
 
+- (void)startCamera {
+    [_recognizer startCamera];
+}
+
+- (void)stopCamera {
+    [_recognizer stopCamera];
+}
+
+- (void)didMoveToWindow
+{
+    [super didMoveToWindow];
+    BOOL isVisible = self.superview && self.window;
+    if (!isVisible) {
+        [_recognizer stopCamera];
+    }
+}
+
 #pragma mark PayCardsRecognizerPlatformDelegate
 
 - (void)payCardsRecognizer:(PayCardsRecognizer * _Nonnull)payCardsRecognizer didRecognize:(PayCardsRecognizerResult * _Nonnull)result {

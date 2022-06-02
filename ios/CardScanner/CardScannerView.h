@@ -23,5 +23,9 @@
 
 - (void)resetResult;
 
+- (void)startCamera;
+
+- (void)stopCamera;
+
 @end
 

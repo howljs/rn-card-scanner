@@ -1,6 +1,6 @@
 {
   "name": "rn-card-scanner",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Credit card scanner for React Native",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
