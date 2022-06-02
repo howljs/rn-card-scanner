@@ -7,7 +7,6 @@
 //
 
 #import <React/RCTViewManager.h>
-#import "PayCardsRecognizer/PayCardsRecognizer.h"
 
 @interface CardScannerViewManager : RCTViewManager
 

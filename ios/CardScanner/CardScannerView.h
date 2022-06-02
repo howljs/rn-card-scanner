@@ -7,17 +7,15 @@
 //
 
 #import <React/RCTView.h>
-#import "UIKit/UIKit.h"
-#import "UIView+React.h"
-#import "PayCardsRecognizer/PayCardsRecognizer.h"
+#import <React/UIView+React.h>
+#import <UIKit/UIKit.h>
+#import <PayCardsRecognizer/PayCardsRecognizer.h>
 
-@interface CardScannerView : UIView<PayCardsRecognizerPlatformDelegate>
+@interface CardScannerView : RCTView<PayCardsRecognizerPlatformDelegate>
 
 @property (nonatomic, weak) id<PayCardsRecognizerPlatformDelegate> delegate;
 
 @property (nonatomic, strong) PayCardsRecognizer *recognizer;
-
-@property (nonatomic, assign) UIColor *frameColor;
 
 @property (nonatomic, copy) RCTBubblingEventBlock onDidScanCard;
 

@@ -21,7 +21,8 @@
 }
 
 - (void) initializeRecognizer {
-    _recognizer = [[PayCardsRecognizer alloc] initWithDelegate:self recognizerMode:PayCardsRecognizerDataModeNumber | PayCardsRecognizerDataModeDate | PayCardsRecognizerDataModeName resultMode:PayCardsRecognizerResultModeAsync container:self frameColor:[UIColor whiteColor] isShowLayer:true];
+    UIColor *defaultColor = [UIColor colorWithRed: 0.00 green: 0.48 blue: 1.00 alpha: 1.00];
+    _recognizer = [[PayCardsRecognizer alloc] initWithDelegate:self recognizerMode:PayCardsRecognizerDataModeNumber | PayCardsRecognizerDataModeDate | PayCardsRecognizerDataModeName resultMode:PayCardsRecognizerResultModeAsync container:self frameColor:defaultColor isShowLayer:true];
 }
 
 - (void)layoutSubviews
@@ -32,8 +33,16 @@
 
 - (void)setFrameColor:(UIColor *)frameColor
 {
-    if (![frameColor isEqual:_frameColor]) {
-        [_recognizer updateFrameColor:frameColor];
+    if (frameColor != nil) {
+        const CGFloat *components = CGColorGetComponents(frameColor.CGColor);
+        CGFloat r = components[1];
+        CGFloat g = components[2];
+        CGFloat b = components[3];
+        CGFloat a = components[0];
+        UIColor *convertedColor = [UIColor colorWithRed:r green:g blue:b alpha:a];
+        [_recognizer updateFrameColor:convertedColor];
+    }else {
+        [_recognizer updateFrameColor:[UIColor colorWithRed: 0.00 green: 0.48 blue: 1.00 alpha: 1.00]];
     }
 }
 
