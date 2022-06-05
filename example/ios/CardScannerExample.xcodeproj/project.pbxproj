@@ -301,7 +301,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.howl.cardscaner;
+				PRODUCT_BUNDLE_IDENTIFIER = com.howl.cardscanner;
 				PRODUCT_NAME = CardScannerExample;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "CardScannerExample-Bridging-Header.h";
@@ -332,7 +332,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.howl.cardscaner;
+				PRODUCT_BUNDLE_IDENTIFIER = com.howl.cardscanner;
 				PRODUCT_NAME = CardScannerExample;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "CardScannerExample-Bridging-Header.h";

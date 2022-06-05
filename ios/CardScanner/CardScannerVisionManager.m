@@ -1,8 +1,8 @@
 //
-//  CardScannerViewManager.h
+//  CardScannerVisionManager.m
 //  CardScanner
 //
-//  Created by Howl on 01/06/2022.
+//  Created by Howl on 04/06/2022.
 //  Copyright © 2022 Facebook. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 #import <React/RCTBridgeModule.h>
 #import <React/RCTViewManager.h>
 
-@interface RCT_EXTERN_MODULE(CardScannerViewManager, RCTViewManager)
+@interface RCT_EXTERN_MODULE(CardScannerVisionManager, RCTViewManager)
 RCT_EXPORT_VIEW_PROPERTY(onDidScanCard, RCTDirectEventBlock)
 RCT_EXPORT_VIEW_PROPERTY(frameColor, NSString)
 RCT_EXTERN_METHOD(stopScanCard:(nonnull NSNumber *) reactTag)

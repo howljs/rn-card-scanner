@@ -3,25 +3,21 @@ import React, {
   ReactElement,
   useEffect,
   useImperativeHandle,
-  useRef,
   useState,
 } from 'react';
 import {
   ActivityIndicator,
-  ColorValue,
   findNodeHandle,
+  NativeModules,
   NativeSyntheticEvent,
   PermissionsAndroid,
   Platform,
-  processColor,
-  ProcessedColorValue,
   requireNativeComponent,
   StyleSheet,
   Text,
   UIManager,
   View,
   ViewProps,
-  NativeModules,
 } from 'react-native';
 
 export interface CardScannerResponse {
@@ -34,15 +30,21 @@ export interface CardScannerResponse {
 export interface CardScannerHandle {
   toggleFlash(): void;
   resetResult(): void;
+  startCamera(): void;
+  stopCamera(): void;
 }
 
 interface CardScannerProps extends ViewProps {
   didCardScan?: (props: CardScannerResponse) => void;
-  frameColor?: number | ColorValue;
+  frameColor?: string;
   PermissionCheckingComponent?: ReactElement;
   NotAuthorizedComponent?: ReactElement;
   disabled?: boolean;
+  useAppleVision?: boolean;
 }
+
+const ComponentName = 'CardScannerView';
+const ComponentVisionName = 'CardScannerVision';
 
 const CardScanner: React.ForwardRefRenderFunction<
   CardScannerHandle,
@@ -54,13 +56,19 @@ const CardScanner: React.ForwardRefRenderFunction<
     PermissionCheckingComponent,
     NotAuthorizedComponent,
     disabled,
+    useAppleVision,
     ...props
   },
   ref
 ) => {
-  const scannerRef = useRef(null);
+  const [viewId, setViewId] = useState<number | null>(null);
   const [isPermissionChecked, setIsPermissionChecked] = useState(false);
   const [isAuthorized, setIsAuthorized] = useState(false);
+
+  const isEnableAppleVision =
+    useAppleVision &&
+    Platform.OS === 'ios' &&
+    parseInt(Platform.Version, 10) >= 13;
 
   useEffect(() => {
     checkCameraPermission().then((isGranted: boolean) => {
@@ -72,14 +80,14 @@ const CardScanner: React.ForwardRefRenderFunction<
   useImperativeHandle(
     ref,
     () => {
-      const viewId = findNodeHandle(scannerRef.current);
-      const Commands =
-        UIManager.getViewManagerConfig('CardScannerView').Commands;
+      const Commands = UIManager.getViewManagerConfig(
+        isEnableAppleVision ? ComponentVisionName : ComponentName
+      ).Commands;
 
       const toggleFlashId = getCommandId(Commands.toggleFlash);
       const resetResultId = getCommandId(Commands.resetResult);
-      const startCameraId = getCommandId(Commands.startCamera);
-      const stopCameraId = getCommandId(Commands.stopCamera);
+      const startCameraId = getCommandId(Commands.startScanCard);
+      const stopCameraId = getCommandId(Commands.stopScanCard);
 
       return {
         toggleFlash() {
@@ -96,7 +104,7 @@ const CardScanner: React.ForwardRefRenderFunction<
         },
       };
     },
-    []
+    [viewId, isEnableAppleVision]
   );
 
   const _onDidScanCard = (res: NativeSyntheticEvent<CardScannerResponse>) => {
@@ -129,14 +137,20 @@ const CardScanner: React.ForwardRefRenderFunction<
     );
   }
 
+  const CardScannerComponent = isEnableAppleVision
+    ? CardScannerVision
+    : CardScannerView;
+
   return (
     <View {...props}>
       {!disabled && (
-        <CardScannerView
+        <CardScannerComponent
           style={StyleSheet.absoluteFill}
           onDidScanCard={_onDidScanCard}
-          ref={scannerRef}
-          frameColor={processColor(frameColor)}
+          ref={(r: any) => {
+            setViewId(findNodeHandle(r));
+          }}
+          frameColor={frameColor}
         />
       )}
     </View>
@@ -179,7 +193,7 @@ const getCommandId = (commandId: number) =>
 interface ScannerNativeProps extends ViewProps {
   ref: any;
   onDidScanCard: (props: NativeSyntheticEvent<CardScannerResponse>) => void;
-  frameColor: ProcessedColorValue | null | undefined;
+  frameColor?: string;
 }
 
 const LINKING_ERROR =
@@ -189,8 +203,15 @@ const LINKING_ERROR =
   '- You are not using Expo managed workflow\n';
 
 const CardScannerView =
-  UIManager.getViewManagerConfig('CardScannerView') != null
-    ? requireNativeComponent<ScannerNativeProps>('CardScannerView')
+  UIManager.getViewManagerConfig(ComponentName) != null
+    ? requireNativeComponent<ScannerNativeProps>(ComponentName)
+    : () => {
+        throw new Error(LINKING_ERROR);
+      };
+
+const CardScannerVision =
+  UIManager.getViewManagerConfig(ComponentVisionName) != null
+    ? requireNativeComponent<ScannerNativeProps>(ComponentVisionName)
     : () => {
         throw new Error(LINKING_ERROR);
       };

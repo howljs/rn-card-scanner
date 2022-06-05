@@ -1,8 +1,8 @@
-import CardScanner, { CardScannerResponse } from 'rn-card-scanner';
 import { NavigationProp, useIsFocused } from '@react-navigation/native';
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import CardScanner, { CardScannerResponse } from 'rn-card-scanner';
 import type { RootStackRoutes } from '../App';
 
 interface RecognizerScreenProps {

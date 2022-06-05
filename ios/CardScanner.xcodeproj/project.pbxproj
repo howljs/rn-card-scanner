@@ -7,10 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D6D7683E2847AEDB00BDE508 /* CardScannerViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D6D7683D2847AEDB00BDE508 /* CardScannerViewManager.m */; };
-		D6D768422847AF1C00BDE508 /* CardScannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6D768412847AF1C00BDE508 /* CardScannerView.m */; };
+		D63FEACC284CA1C6002D3FCB /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63FEACB284CA1C6002D3FCB /* UIColorExtension.swift */; };
+		D63FEAEE284CA9D4002D3FCB /* Reg.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63FEAE4284CA9D4002D3FCB /* Reg.swift */; };
+		D63FEAEF284CA9D4002D3FCB /* CreditCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63FEAE5284CA9D4002D3FCB /* CreditCard.swift */; };
+		D63FEAF0284CA9D4002D3FCB /* ImageAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63FEAE6284CA9D4002D3FCB /* ImageAnalyzer.swift */; };
+		D63FEAF1284CA9D4002D3FCB /* ImageRatio.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63FEAEB284CA9D4002D3FCB /* ImageRatio.swift */; };
+		D63FEAF2284CA9D4002D3FCB /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63FEAEC284CA9D4002D3FCB /* CameraView.swift */; };
+		D63FEAF3284CA9D4002D3FCB /* CreditCardScannerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63FEAED284CA9D4002D3FCB /* CreditCardScannerError.swift */; };
+		D6C7E9B1284B169900C2B13F /* CardScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C7E9B0284B169900C2B13F /* CardScannerView.swift */; };
+		D6C7E9B4284B17A000C2B13F /* CardScannerModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C7E9B3284B17A000C2B13F /* CardScannerModule.swift */; };
+		D6C7E9B6284B18AD00C2B13F /* CardScannerViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C7E9B5284B18AD00C2B13F /* CardScannerViewManager.swift */; };
+		D6C7E9B8284B37EF00C2B13F /* CardScannerVisionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C7E9B7284B37EF00C2B13F /* CardScannerVisionManager.m */; };
+		D6C7E9BA284B380400C2B13F /* CardScannerVision.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C7E9B9284B380400C2B13F /* CardScannerVision.swift */; };
+		D6C7E9BE284B383400C2B13F /* CardScannerVisionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C7E9BD284B383400C2B13F /* CardScannerVisionManager.swift */; };
+		D6C7E9DD284B5EE600C2B13F /* CardScannerModule.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C7E9DB284B5EE600C2B13F /* CardScannerModule.m */; };
+		D6C7E9DE284B5EE600C2B13F /* CardScannerViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C7E9DC284B5EE600C2B13F /* CardScannerViewManager.m */; };
 		D6D768452847B22500BDE508 /* PayCardsRecognizer.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6D768442847B22500BDE508 /* PayCardsRecognizer.xcframework */; };
-		D6D768482847B34D00BDE508 /* CardScannerModule.m in Sources */ = {isa = PBXBuildFile; fileRef = D6D768472847B34D00BDE508 /* CardScannerModule.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,13 +39,26 @@
 
 /* Begin PBXFileReference section */
 		134814201AA4EA6300B7C361 /* libCardScanner.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCardScanner.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		D6D7683D2847AEDB00BDE508 /* CardScannerViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardScannerViewManager.m; path = CardScanner/CardScannerViewManager.m; sourceTree = "<group>"; };
-		D6D7683F2847AEEF00BDE508 /* CardScannerViewManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CardScannerViewManager.h; path = CardScanner/CardScannerViewManager.h; sourceTree = "<group>"; };
-		D6D768402847AEFE00BDE508 /* CardScannerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CardScannerView.h; path = CardScanner/CardScannerView.h; sourceTree = "<group>"; };
-		D6D768412847AF1C00BDE508 /* CardScannerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CardScannerView.m; path = CardScanner/CardScannerView.m; sourceTree = "<group>"; };
+		D63FEACB284CA1C6002D3FCB /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIColorExtension.swift; path = CardScanner/UIColorExtension.swift; sourceTree = "<group>"; };
+		D63FEAE4284CA9D4002D3FCB /* Reg.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reg.swift; sourceTree = "<group>"; };
+		D63FEAE5284CA9D4002D3FCB /* CreditCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditCard.swift; sourceTree = "<group>"; };
+		D63FEAE6284CA9D4002D3FCB /* ImageAnalyzer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageAnalyzer.swift; sourceTree = "<group>"; };
+		D63FEAE8284CA9D4002D3FCB /* PortraitFrame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PortraitFrame.png; sourceTree = "<group>"; };
+		D63FEAE9284CA9D4002D3FCB /* PortraitFrame@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PortraitFrame@3x.png"; sourceTree = "<group>"; };
+		D63FEAEA284CA9D4002D3FCB /* PortraitFrame@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PortraitFrame@2x.png"; sourceTree = "<group>"; };
+		D63FEAEB284CA9D4002D3FCB /* ImageRatio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageRatio.swift; sourceTree = "<group>"; };
+		D63FEAEC284CA9D4002D3FCB /* CameraView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		D63FEAED284CA9D4002D3FCB /* CreditCardScannerError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditCardScannerError.swift; sourceTree = "<group>"; };
+		D6C7E9B0284B169900C2B13F /* CardScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CardScannerView.swift; path = CardScanner/CardScannerView.swift; sourceTree = "<group>"; };
+		D6C7E9B2284B170800C2B13F /* CardScanner-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "CardScanner-Bridging-Header.h"; path = "CardScanner/CardScanner-Bridging-Header.h"; sourceTree = "<group>"; };
+		D6C7E9B3284B17A000C2B13F /* CardScannerModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CardScannerModule.swift; path = CardScanner/CardScannerModule.swift; sourceTree = "<group>"; };
+		D6C7E9B5284B18AD00C2B13F /* CardScannerViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CardScannerViewManager.swift; path = CardScanner/CardScannerViewManager.swift; sourceTree = "<group>"; };
+		D6C7E9B7284B37EF00C2B13F /* CardScannerVisionManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CardScannerVisionManager.m; path = CardScanner/CardScannerVisionManager.m; sourceTree = "<group>"; };
+		D6C7E9B9284B380400C2B13F /* CardScannerVision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CardScannerVision.swift; path = CardScanner/CardScannerVision.swift; sourceTree = "<group>"; };
+		D6C7E9BD284B383400C2B13F /* CardScannerVisionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CardScannerVisionManager.swift; path = CardScanner/CardScannerVisionManager.swift; sourceTree = "<group>"; };
+		D6C7E9DB284B5EE600C2B13F /* CardScannerModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardScannerModule.m; path = CardScanner/CardScannerModule.m; sourceTree = "<group>"; };
+		D6C7E9DC284B5EE600C2B13F /* CardScannerViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardScannerViewManager.m; path = CardScanner/CardScannerViewManager.m; sourceTree = "<group>"; };
 		D6D768442847B22500BDE508 /* PayCardsRecognizer.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = PayCardsRecognizer.xcframework; path = CardScanner/PayCardsRecognizer.xcframework; sourceTree = "<group>"; };
-		D6D768462847B33800BDE508 /* CardScannerModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CardScannerModule.h; path = CardScanner/CardScannerModule.h; sourceTree = "<group>"; };
-		D6D768472847B34D00BDE508 /* CardScannerModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CardScannerModule.m; path = CardScanner/CardScannerModule.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,15 +90,45 @@
 			);
 			sourceTree = "<group>";
 		};
+		D63FEAE3284CA9D4002D3FCB /* AppleVision */ = {
+			isa = PBXGroup;
+			children = (
+				D63FEAE4284CA9D4002D3FCB /* Reg.swift */,
+				D63FEAE5284CA9D4002D3FCB /* CreditCard.swift */,
+				D63FEAE6284CA9D4002D3FCB /* ImageAnalyzer.swift */,
+				D63FEAE7284CA9D4002D3FCB /* Resources */,
+				D63FEAEB284CA9D4002D3FCB /* ImageRatio.swift */,
+				D63FEAEC284CA9D4002D3FCB /* CameraView.swift */,
+				D63FEAED284CA9D4002D3FCB /* CreditCardScannerError.swift */,
+			);
+			name = AppleVision;
+			path = CardScanner/AppleVision;
+			sourceTree = "<group>";
+		};
+		D63FEAE7284CA9D4002D3FCB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D63FEAE8284CA9D4002D3FCB /* PortraitFrame.png */,
+				D63FEAE9284CA9D4002D3FCB /* PortraitFrame@3x.png */,
+				D63FEAEA284CA9D4002D3FCB /* PortraitFrame@2x.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		D6D7683C2847AEC600BDE508 /* CardScanner */ = {
 			isa = PBXGroup;
 			children = (
-				D6D7683D2847AEDB00BDE508 /* CardScannerViewManager.m */,
-				D6D7683F2847AEEF00BDE508 /* CardScannerViewManager.h */,
-				D6D768402847AEFE00BDE508 /* CardScannerView.h */,
-				D6D768412847AF1C00BDE508 /* CardScannerView.m */,
-				D6D768462847B33800BDE508 /* CardScannerModule.h */,
-				D6D768472847B34D00BDE508 /* CardScannerModule.m */,
+				D63FEAE3284CA9D4002D3FCB /* AppleVision */,
+				D6C7E9B2284B170800C2B13F /* CardScanner-Bridging-Header.h */,
+				D6C7E9B0284B169900C2B13F /* CardScannerView.swift */,
+				D6C7E9DB284B5EE600C2B13F /* CardScannerModule.m */,
+				D6C7E9DC284B5EE600C2B13F /* CardScannerViewManager.m */,
+				D6C7E9B3284B17A000C2B13F /* CardScannerModule.swift */,
+				D6C7E9B5284B18AD00C2B13F /* CardScannerViewManager.swift */,
+				D6C7E9B7284B37EF00C2B13F /* CardScannerVisionManager.m */,
+				D6C7E9B9284B380400C2B13F /* CardScannerVision.swift */,
+				D6C7E9BD284B383400C2B13F /* CardScannerVisionManager.swift */,
+				D63FEACB284CA1C6002D3FCB /* UIColorExtension.swift */,
 			);
 			name = CardScanner;
 			sourceTree = "<group>";
@@ -117,6 +172,7 @@
 				TargetAttributes = {
 					58B511DA1A9E6C8500147676 = {
 						CreatedOnToolsVersion = 6.1.1;
+						LastSwiftMigration = 1330;
 					};
 				};
 			};
@@ -143,9 +199,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D6D768482847B34D00BDE508 /* CardScannerModule.m in Sources */,
-				D6D7683E2847AEDB00BDE508 /* CardScannerViewManager.m in Sources */,
-				D6D768422847AF1C00BDE508 /* CardScannerView.m in Sources */,
+				D6C7E9BE284B383400C2B13F /* CardScannerVisionManager.swift in Sources */,
+				D63FEAF2284CA9D4002D3FCB /* CameraView.swift in Sources */,
+				D6C7E9B8284B37EF00C2B13F /* CardScannerVisionManager.m in Sources */,
+				D63FEACC284CA1C6002D3FCB /* UIColorExtension.swift in Sources */,
+				D6C7E9B1284B169900C2B13F /* CardScannerView.swift in Sources */,
+				D63FEAEE284CA9D4002D3FCB /* Reg.swift in Sources */,
+				D63FEAEF284CA9D4002D3FCB /* CreditCard.swift in Sources */,
+				D6C7E9B4284B17A000C2B13F /* CardScannerModule.swift in Sources */,
+				D63FEAF0284CA9D4002D3FCB /* ImageAnalyzer.swift in Sources */,
+				D63FEAF3284CA9D4002D3FCB /* CreditCardScannerError.swift in Sources */,
+				D6C7E9BA284B380400C2B13F /* CardScannerVision.swift in Sources */,
+				D6C7E9B6284B18AD00C2B13F /* CardScannerViewManager.swift in Sources */,
+				D63FEAF1284CA9D4002D3FCB /* ImageRatio.swift in Sources */,
+				D6C7E9DD284B5EE600C2B13F /* CardScannerModule.m in Sources */,
+				D6C7E9DE284B5EE600C2B13F /* CardScannerViewManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,32 +316,49 @@
 		58B511F01A9E6C8500147676 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../../../React/**",
 					"$(SRCROOT)/../../react-native/React/**",
 				);
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = CardScanner;
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "CardScanner-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
 		58B511F11A9E6C8500147676 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../../../React/**",
 					"$(SRCROOT)/../../react-native/React/**",
 				);
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = CardScanner;
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "CardScanner-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};

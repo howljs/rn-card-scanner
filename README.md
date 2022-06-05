@@ -1,4 +1,5 @@
 # Credit Card Scanner
+
 ![npm](https://img.shields.io/npm/dm/rn-card-scanner?logo=npm)
 
 This library provides payment card scanning functionality for your react-native app
@@ -9,6 +10,7 @@ This library provides payment card scanning functionality for your react-native 
 - [Usage](#usage)
 - [Run example project](#run-example-project)
 - [Available props](#available-props)
+- [Available methods](#available-methods)
 - [Contributing](#contributing)
 - [License](#license)
 - [Original SDK](#original-sdk)
@@ -146,15 +148,37 @@ Running the example project:
 
 ## Available props
 
-| Prop                              | Description                                                                                                    | Default     | Type                   |
-| --------------------------------- | -------------------------------------------------------------------------------------------------------------- | ----------- | ---------------------- |
-| **`didCardScan`**                 | This function will be called when the scan is completed and returns the [CreditCard](#creditcard) information. | `undefined` | `Object`               |
-| **`frameColor`**                  | Recognizer frame color.                                                                                        | `undefined` | `number or ColorValue` |
-| **`PermissionCheckingComponent`** | Show when permission is checking.                                                                              | `undefined` | `ReactElement`         |
-| **`NotAuthorizedComponent`**      | Show when permission is not authorized.                                                                        | `undefined` | `ReactElement`         |
-| **`disabled`**                    | Disable scanner.                                                                                               | `false` | `boolean`         |
+| Prop                              | Description                                                                                                                 | Default     | Type                   |
+| --------------------------------- | --------------------------------------------------------------------------------------------------------------------------- | ----------- | ---------------------- |
+| **`didCardScan`**                 | This function will be called when the scan is completed and returns the [CreditCard](#creditcard) information.              | `undefined` | `Object`               |
+| **`frameColor`**                  | Recognizer frame color.                                                                                                     | `undefined` | `number or ColorValue` |
+| **`PermissionCheckingComponent`** | Show when permission is checking.                                                                                           | `undefined` | `ReactElement`         |
+| **`NotAuthorizedComponent`**      | Show when permission is not authorized.                                                                                     | `undefined` | `ReactElement`         |
+| **`disabled`**                    | Disable scanner.                                                                                                            | `undefined` | `boolean`              |
+| **`useAppleVision`**              | Use [Apple's Vision Framework](https://developer.apple.com/documentation/vision) to scan credit card when iOS version >= 13 | `undefined` | `boolean`              |
 
 - Includes all React Native [View](https://reactnative.dev/docs/view#props) props.
+
+## Available methods
+
+```js
+const cardScannerRef = useRef(null)
+
+<CardScanner
+  //Other props
+  ref={cardScannerRef}
+/>
+
+//Ex: Toggle flash on and off
+onPress={() => cardScannerRef.current.toggleFlash()}
+```
+
+| Method            | Description              |
+| ----------------- | ------------------------ |
+| **`toggleFlash`** | Toggle flash on and off  |
+| **`resetResult`** | Reset recognizer result. |
+| **`startCamera`** | Start recognizer         |
+| **`stopCamera`**  | Stop recognizer.         |
 
 ### CreditCard
 
@@ -164,6 +188,23 @@ An object with the following keys:
 - `expiryMonth` - Expiry month.
 - `expiryYear` - Expiry year.
 - `holderName` - Card holder name.
+
+## Troubleshooting
+
+### `Undefined symbols for architecture x86_64` on iOS
+
+While building your iOS project, you may see a `Undefined symbols for architecture x86_64` error. This is caused by `react-native init` template configuration that is not fully compatible with Swift.
+
+```
+Undefined symbols for architecture x86_64:
+    "_swift_FORCE_LOAD...
+    ld: symbol(s) not found for architecture x86_64
+```
+
+Follow these steps to resolve this:
+- Open your project via Xcode.
+- Create a new Swift file to the project (File > New > File > Swift), give it any name (e.g. `File.swift`) and answer "yes" when Xcode asks you if you want to "Create Bridging Header"
+- Clean build and run app
 
 ## Contributing
 
