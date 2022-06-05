@@ -57,6 +57,15 @@ class CardScannerView : UIView, PayCardsRecognizerPlatformDelegate {
         recognizer.stopCamera()
     }
     
+    override func didMoveToWindow() {
+        super.didMoveToWindow()
+        let isVisible = (self.superview != nil) && (self.window != nil)
+        if(!isVisible) {
+            recognizer.stopCamera()
+        }
+        
+    }
+    
     required public init?(coder aDecoder: NSCoder) {
         fatalError( "init(coder:) has not been implemented" )
     }
