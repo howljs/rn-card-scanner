@@ -42,11 +42,12 @@ public class CardScannerViewManager extends SimpleViewManager<ScannerView> imple
   }
 
   @ReactProp(name = "frameColor")
-  public void setFrameColor(ScannerView view, int color) {
-    if (color == 0) {
+  public void setFrameColor(ScannerView view, String color) {
+    int parsedColor = Color.parseColor(color);
+    if (parsedColor == 0) {
       view.resetFrameColor();
     } else {
-      view.setFrameColor(color);
+      view.setFrameColor(parsedColor);
     }
   }
 
