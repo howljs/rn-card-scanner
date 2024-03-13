@@ -15,37 +15,37 @@ import AVFoundation
 class CardScannerVision : UIView, CameraViewDelegate {
     private var cameraViewMaskLayerColor: UIColor = .black
     private var cameraViewMaskAlpha: CGFloat = 0.6
-    
+
     private lazy var cameraView: CameraView = CameraView(
         delegate: self,
         maskLayerColor: self.cameraViewMaskLayerColor,
         maskLayerAlpha: self.cameraViewMaskAlpha
     )
-    
+
     /// Analyzes text data for credit card info
     private lazy var analyzer = ImageAnalyzer(delegate: self)
-    
+
     @objc var onDidScanCard: RCTDirectEventBlock?
-    
+
     @objc var frameColor: String = "#007aff" {
         didSet {
             print(UIColor(hexString: frameColor))
             frameImageView.tintColor = UIColor(hexString: frameColor)
         }
     }
-    
+
     let frameImageView: UIImageView = {
         let theImageView = UIImageView()
         theImageView.contentMode = .center
         return theImageView
     }()
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.addSubview(cameraView)
         self.addSubview(frameImageView)
     }
-    
+
     override func didMoveToWindow() {
         super.didMoveToWindow()
         let isVisible = (self.superview != nil) && (self.window != nil)
@@ -62,9 +62,9 @@ class CardScannerVision : UIView, CameraViewDelegate {
         }else {
             self.cameraView.stopSession()
         }
-        
+
     }
-    
+
     override func layoutSubviews() {
         super.layoutSubviews()
         cameraView.frame = self.bounds
@@ -79,39 +79,39 @@ class CardScannerVision : UIView, CameraViewDelegate {
         let newImageSize = CGSize(width: cuttedWidth, height: cuttedHeight)
         frameImageView.image = portraitFrame?.resizeImageTo(size: newImageSize)?.withRenderingMode(.alwaysTemplate)
     }
-    
+
     public func toggleFlash() {
         self.cameraView.toggleFlash()
     }
-    
+
     public func resetResult() {
         self.cameraView.stopSession()
         self.cameraView.startSession()
     }
-    
+
     public func stopCamera() {
         self.cameraView.stopSession()
     }
-    
+
     public func startCamera() {
         if(self.cameraView.isRunning()){
             return;
         }
         self.cameraView.startSession()
     }
-    
+
     required public init?(coder aDecoder: NSCoder) {
         fatalError( "init(coder:) has not been implemented" )
     }
-    
+
 }
 
 @available(iOS 13, *)
-extension CardScannerVision: CameraViewDelegate {
+extension CardScannerVision {
     internal func didCapture(image: CGImage) {
         analyzer.analyze(image: image)
     }
-    
+
     internal func didError(with error: CreditCardScannerError) {
         DispatchQueue.main.async { [weak self] in
             guard let strongSelf = self else { return }
@@ -148,7 +148,7 @@ extension CardScannerVision: ImageAnalyzerProtocol {
                     strongSelf.onDidScanCard!(cardData)
                 }
             }
-            
+
         case .failure(_):
             DispatchQueue.main.async { [weak self] in
                 guard let strongSelf = self else { return }
@@ -166,7 +166,7 @@ extension AVCaptureDevice {
                 authorizedHandler(isAuthorized)
             }
         }
-        
+
         switch authorizationStatus(for: .video) {
         case .authorized:
             mainThreadHandler(true)
