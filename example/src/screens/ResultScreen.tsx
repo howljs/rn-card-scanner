@@ -1,15 +1,18 @@
-import type { NavigationProp, RouteProp } from '@react-navigation/native';
+import {
+  useNavigation,
+  useRoute,
+  type NavigationProp,
+  type RouteProp,
+} from '@react-navigation/native';
 import React, { useState } from 'react';
 import { Alert, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import type { RootStackRoutes } from '../App';
 import { TextInput } from '../components';
+import type { RootStackRoutes } from '../types';
 
-interface ResultScreenProps {
-  route: RouteProp<RootStackRoutes, 'Result'>;
-  navigation: NavigationProp<RootStackRoutes>;
-}
+const ResultScreen = () => {
+  const navigation = useNavigation<NavigationProp<RootStackRoutes>>();
+  const route = useRoute<RouteProp<RootStackRoutes, 'Result'>>();
 
-const ResultScreen = ({ route, navigation }: ResultScreenProps) => {
   const [holderName, setHolderName] = useState(route.params?.holderName);
   const [cardNumber, setCardNumber] = useState(route.params?.cardNumber);
   const [expiration, setExpiration] = useState(

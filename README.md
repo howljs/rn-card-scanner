@@ -6,14 +6,21 @@ This library provides payment card scanning functionality for your react-native 
 
 ![example.gif](example.gif)
 
-- [Installation](#installation)
-- [Usage](#usage)
-- [Run example project](#run-example-project)
-- [Available props](#available-props)
-- [Available methods](#available-methods)
-- [Contributing](#contributing)
-- [License](#license)
-- [Original SDK](#original-sdk)
+- [Credit Card Scanner](#credit-card-scanner)
+  - [Installation](#installation)
+    - [1. Install the library](#1-install-the-library)
+    - [2. Link (iOS only)](#2-link-ios-only)
+    - [3. Permissions (iOS only)](#3-permissions-ios-only)
+  - [Usage](#usage)
+  - [Run example project](#run-example-project)
+  - [Available props](#available-props)
+  - [Available methods](#available-methods)
+    - [CreditCard](#creditcard)
+  - [Troubleshooting](#troubleshooting)
+    - [`Undefined symbols for architecture x86_64` on iOS](#undefined-symbols-for-architecture-x86_64-on-ios)
+  - [Contributing](#contributing)
+  - [License](#license)
+  - [Original SDK](#original-sdk)
 
 ## Installation
 
@@ -31,93 +38,22 @@ or npm:
 npm install --save rn-card-scanner
 ```
 
-### 2. Link
+### 2. Link (iOS only)
 
-**React Native 0.60 and above**
-
-[CLI autolink feature](https://github.com/react-native-community/cli/blob/master/docs/autolinking.md) links the module while building the app.
-
-_Note_ For `iOS` using `cocoapods`, run:
+If you're on a Mac and developing for iOS, you need to install the pods (via [Cocoapods](https://cocoapods.org)) to complete the linking.
 
 ```bash
-$ cd ios/ && pod install
+$ npx pod-install ios
 ```
 
-**React Native 0.59 and below**
+### 3. Permissions (iOS only)
 
-Run `react-native link rn-card-scanner` to link the rn-card-scanner library.
-After following the instructions for your platform to link rn-card-scanner into your project:
+Add the following keys to your `Info.plist` file, located in `<project-root>/ios/YourAppName/Info.plist`:
 
-### Manual Linking
-
-### iOS installation
-
-<details>
-  <summary>iOS details</summary>
-
-### Using [CocoaPods](https://cocoapods.org/)
-
-Add the following to your `Podfile` and run `pod install`:
-
-```ruby
- pod 'RNCardScanner', :path => '../node_modules/rn-card-scanner'
+```xml
+<key>NSCameraUsageDescription</key>
+<string>Allow access to your camera to scan credit card</string>
 ```
-
-</details>
-
-### Android installation
-
-<details>
-  <summary>Android details</summary>
-
-Run `react-native link rn-card-scanner` to link the rn-card-scanner library.
-
-#### **android/settings.gradle**
-
-```gradle
-include ':reactnativecardscanner'
-project(':reactnativecardscanner').projectDir = new File(rootProject.projectDir, '../node_modules/rn-card-scanner/android')
-```
-
-#### **android/app/build.gradle**
-
-From version >= 5.0.0, you have to apply these changes:
-
-```diff
-dependencies {
-   ...
-+    implementation project(':reactnativecardscanner')
-}
-```
-
-#### **android/gradle.properties**
-
-Migrating to AndroidX (needs version >= 5.0.0):
-
-```gradle.properties
-android.useAndroidX=true
-android.enableJetifier=true
-```
-
-#### **Then, in android/app/src/main/java/your/package/MainApplication.java:**
-
-On top, where imports are:
-
-```java
-import com.reactnativecardscanner.CardScannerPackage;
-```
-
-```java
-@Override
-protected List<ReactPackage> getPackages() {
-    return Arrays.asList(
-            new MainReactPackage(),
-            new CardScannerPackage()
-    );
-}
-```
-
-</details>
 
 ## Usage
 

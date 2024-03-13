@@ -19,7 +19,7 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
 
-import com.reactnativecardscanner.R;
+import com.rncardscanner.R;
 
 import cards.pay.paycardsrecognizer.sdk.ndk.RecognitionConstants;
 import cards.pay.paycardsrecognizer.sdk.ndk.RecognitionResult;

@@ -1,23 +1,23 @@
 import React, {
   forwardRef,
-  ReactElement,
   useEffect,
   useImperativeHandle,
   useState,
+  type ReactElement,
 } from 'react';
 import {
   ActivityIndicator,
-  findNodeHandle,
   NativeModules,
-  NativeSyntheticEvent,
   PermissionsAndroid,
   Platform,
-  requireNativeComponent,
   StyleSheet,
   Text,
   UIManager,
   View,
-  ViewProps,
+  findNodeHandle,
+  requireNativeComponent,
+  type NativeSyntheticEvent,
+  type ViewProps,
 } from 'react-native';
 
 export interface CardScannerResponse {
@@ -45,6 +45,13 @@ interface CardScannerProps extends ViewProps {
 
 const ComponentName = 'CardScannerView';
 const ComponentVisionName = 'CardScannerVision';
+
+type CommandsType = {
+  toggleFlash: number;
+  resetResult: number;
+  startScanCard: number;
+  stopScanCard: number;
+};
 
 const CardScanner: React.ForwardRefRenderFunction<
   CardScannerHandle,
@@ -82,7 +89,7 @@ const CardScanner: React.ForwardRefRenderFunction<
     () => {
       const Commands = UIManager.getViewManagerConfig(
         isEnableAppleVision ? ComponentVisionName : ComponentName
-      ).Commands;
+      ).Commands as CommandsType;
 
       const toggleFlashId = getCommandId(Commands.toggleFlash);
       const resetResultId = getCommandId(Commands.resetResult);
@@ -169,7 +176,7 @@ const checkCameraPermission = async () => {
     let hasCameraPermissions = false;
     if (Platform.OS === 'android') {
       const permissionStatus = await PermissionsAndroid.request(
-        PermissionsAndroid.PERMISSIONS.CAMERA
+        'android.permission.CAMERA'
       );
       hasCameraPermissions =
         permissionStatus === PermissionsAndroid.RESULTS.GRANTED;

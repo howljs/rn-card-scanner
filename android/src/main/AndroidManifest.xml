@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.reactnativecardscanner">
+          package="com.rncardscanner">
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.FLASHLIGHT" />
 
@@ -12,5 +12,4 @@
     <uses-feature
         android:glEsVersion="0x00020000"
         android:required="true" />
-
 </manifest>

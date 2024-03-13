@@ -1,20 +1,24 @@
-import { NavigationProp, useIsFocused } from '@react-navigation/native';
+import {
+  useIsFocused,
+  useNavigation,
+  type NavigationProp,
+  useRoute,
+  type RouteProp,
+} from '@react-navigation/native';
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import CardScanner, { CardScannerResponse } from 'rn-card-scanner';
-import type { RootStackRoutes } from '../App';
+import CardScanner, { type CardScannerResponse } from 'rn-card-scanner';
+import type { RootStackRoutes } from '../types';
 
-interface RecognizerScreenProps {
-  navigation: NavigationProp<RootStackRoutes>;
-}
-
-const RecognizerScreen = ({ navigation }: RecognizerScreenProps) => {
+const RecognizerScreen = () => {
   const isFocused = useIsFocused();
+  const navigation = useNavigation<NavigationProp<RootStackRoutes>>();
+  const route = useRoute<RouteProp<RootStackRoutes, 'Recognizer'>>();
   const { bottom: safeBottom } = useSafeAreaInsets();
 
-  const _onPressAddManually = (params?: CardScannerResponse) => {
-    navigation.navigate('Result', params);
+  const _onPressAddManually = (props?: CardScannerResponse) => {
+    navigation.navigate('Result', props);
   };
 
   return (
@@ -23,6 +27,7 @@ const RecognizerScreen = ({ navigation }: RecognizerScreenProps) => {
         disabled={!isFocused}
         style={styles.scanner}
         didCardScan={_onPressAddManually}
+        useAppleVision={route.params.useAppleVision}
       />
       <TouchableOpacity
         onPress={() => _onPressAddManually()}

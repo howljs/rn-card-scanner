@@ -1,15 +1,20 @@
-import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import React from 'react';
+import {
+  Image,
+  Platform,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import { Images } from '../assets';
-import type { NavigationProp } from '@react-navigation/native';
+import { useNavigation, type NavigationProp } from '@react-navigation/native';
+import type { RootStackRoutes } from '../types';
 
-interface HomeScreenProps {
-  navigation: NavigationProp<any>;
-}
-
-const HomeScreen = ({ navigation }: HomeScreenProps) => {
-  const _onPressScan = () => {
-    navigation.navigate('Recognizer');
+const HomeScreen = () => {
+  const navigation = useNavigation<NavigationProp<RootStackRoutes>>();
+  const _onPressScan = (useAppleVision: boolean) => {
+    navigation.navigate('Recognizer', { useAppleVision: useAppleVision });
   };
 
   return (
@@ -24,10 +29,19 @@ const HomeScreen = ({ navigation }: HomeScreenProps) => {
       <TouchableOpacity
         activeOpacity={0.6}
         style={styles.scanBtn}
-        onPress={_onPressScan}
+        onPress={() => _onPressScan(false)}
       >
         <Text style={styles.scanText}>Scan card</Text>
       </TouchableOpacity>
+      {Platform.OS === 'ios' && (
+        <TouchableOpacity
+          activeOpacity={0.6}
+          style={styles.scanBtn}
+          onPress={() => _onPressScan(true)}
+        >
+          <Text style={styles.scanText}>Scan card (Use Apple Vision)</Text>
+        </TouchableOpacity>
+      )}
     </View>
   );
 };

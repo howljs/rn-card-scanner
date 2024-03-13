@@ -15,7 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
-import com.reactnativecardscanner.R;
+import com.rncardscanner.R;
 
 import cards.pay.paycardsrecognizer.sdk.utils.Constants;
 
