@@ -103,7 +103,7 @@ final class CameraView: UIView {
     }
     
     func setTorchOn(mode: AVCaptureDevice.TorchMode) {
-        if(vDevice.hasTorch && vDevice.hasFlash) {
+        if(vDevice != nil && vDevice.hasTorch && vDevice.hasFlash) {
             do {
                 try vDevice.lockForConfiguration()
                 vDevice.torchMode = mode
