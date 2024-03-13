@@ -1,6 +1,8 @@
 # Credit Card Scanner
 
-![npm](https://img.shields.io/npm/dm/rn-card-scanner?logo=npm)
+[![Version][npm-shield]][npm-link]
+[![PayPal_Me][paypal-me-shield]][paypal-me]
+[![ko-fi][ko-fi-shield]][ko-fi-profile]
 
 This library provides payment card scanning functionality for your react-native app
 
@@ -153,3 +155,10 @@ MIT
 ## Original SDK
 
 [Android](https://github.com/faceterteam/PayCards_Android) - [iOS](https://github.com/faceterteam/PayCards_iOS)
+
+[npm-shield]: https://img.shields.io/npm/v/rn-card-scanner
+[ko-fi-shield]: https://img.shields.io/static/v1.svg?label=%20&message=ko-fi&logo=ko-fi&color=13C3FF
+[paypal-me-shield]: https://img.shields.io/static/v1.svg?label=%20&message=PayPal.Me&logo=paypal
+[paypal-me]: https://www.paypal.me/j2teamlh
+[ko-fi-profile]: https://ko-fi.com/W7W6G75FH
+[npm-link]: https://www.npmjs.com/package/rn-card-scanner
